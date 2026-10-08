@@ -1,0 +1,8 @@
+{
+  "schema": "meilleur-client-public-release-index/v1",
+  "platform": "linux",
+  "channel": "stable",
+  "status": "not_published",
+  "release": null,
+  "note": "Discovery hint only; Gateway must verify a signed release manifest before activating an exact version"
+}
