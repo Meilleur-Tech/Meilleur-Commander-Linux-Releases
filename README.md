@@ -1,53 +1,93 @@
-# Meilleur Commander: Linux Client Releases
+# Meilleur Commander Client · Linux
 
-Official **public, binary-only** distribution of Meilleur Commander Linux client artifacts, owned by [Meilleur-Tech](https://github.com/Meilleur-Tech).
+**Offizielle Linux-Downloads für Meilleur Commander** | Official Linux client distributions.
 
-## Download and install
+[**Aktuelle Version herunterladen (Latest)**](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/latest) · [Installation (DE)](docs/INSTALLATION.md) · [Fehlerbehebung (DE)](docs/FEHLERBEHEBUNG.md) · [Prüfsummen & Sicherheit](docs/SICHERHEIT-UND-KOMPATIBILITAET.md)
 
-**[Open the Linux Downloads (GitHub Releases)](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases)**
+**Aktuelle Linux-Version: 2.2.2**, veröffentlicht für zwei CPU-Architekturen und zwei getrennte Clientvarianten. Native, RSA-signierte Updates bleiben an den vom Gateway zugewiesenen Updatekanal und die passende Plattform gebunden. Das Linux-Release ist unabhängig von Gateway-, Windows- und macOS-Versionen.
 
-The current published release is **2.1.0**, with a **Linux GUI package for x86_64 (amd64)**. Two separately installable variants, **GUI** and **Headless**, are planned for Linux 2.2 but **are not available for download yet**. Do not treat a tarball installed with `--tray off` as a separate headless-only distribution.
+## Welche Datei brauche ich?
 
-**Check CPU architecture before downloading** (especially in Ubuntu inside Parallels on an Apple-Silicon Mac):
+Zuerst im **Linux-Terminal** prüfen:
 
-```sh
+```bash
 uname -m
 ```
 
-- `x86_64`: supported by the currently published native Linux 2.1.0 GUI package.
-- `aarch64` / `arm64`: **no native Linux ARM64 release is published yet**. Do not install or rename the x86_64 binaries. ARM64 needs a separately built, signed and tested release.
+| System | Desktop mit GUI | Server ohne Desktop (Headless) |
+|---|---|---|
+| `x86_64` (AMD/Intel 64 Bit) | [GUI x86_64 2.2.2](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.2/Meilleur-Commander-Client-Linux-GUI-x86_64-2.2.2.tar.gz) | [Headless x86_64 2.2.2](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.2/Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.2.tar.gz) |
+| `aarch64` / `arm64` (ARM 64 Bit) | [GUI ARM64 2.2.2](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.2/Meilleur-Commander-Client-Linux-GUI-arm64-2.2.2.tar.gz) | [Headless ARM64 2.2.2](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.2/Meilleur-Commander-Client-Linux-HEADLESS-arm64-2.2.2.tar.gz) |
 
-### Linux GUI 2.1.0 (x86_64)
+**Für die Neuinstallation die `.tar.gz`-Datei laden.** Die vier zusätzlich veröffentlichten `.zip`-Dateien sind die **architektur- und variantenabhängigen signierten Updatepakete**. Sie sind keine zweite Installationsmethode. Für 2.2.2 wird in diesem Release **kein .deb, .rpm, Synology-SPK oder QNAP-QPKG** bereitgestellt.
 
-1. Open the [2.1.0 Release](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/tag/linux-client-v2.1.0) and download **`Meilleur-Commander-Client-Linux-x86_64-2.1.0.tar.gz`** from **Assets**.
-2. As your normal desktop user (not root), open a terminal in the download directory and verify the actual published release asset SHA256:
+## In wenigen Minuten installieren
 
-   ```sh
-   cd ~/Downloads
-   echo '7008c72e0cccdc3dd39386f584e84bf30fa77dc710b2257698e0f0588bf767fd  Meilleur-Commander-Client-Linux-x86_64-2.1.0.tar.gz' | sha256sum -c -
-   ```
+Keine Root-Installation, kein Git-Checkout und keine eigene Python-Umgebung nötig. Das passende Archiv herunterladen, dann im Terminal (hier Beispiel **x86_64 Headless**) ausführen:
 
-3. Extract and run the **installer included in the release**. No additional shell script or source checkout is required:
+```bash
+cd ~/Downloads
+tar -xzf Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.2.tar.gz
+cd Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.2
+./install.sh
+```
 
-   ```sh
-   tar -xzf Meilleur-Commander-Client-Linux-x86_64-2.1.0.tar.gz
-   cd Meilleur-Commander-Client-Linux-x86_64-2.1.0
-   ./install.sh --background on --tray on
-   ~/.local/bin/meilleur-commander-client
-   ```
+Für die GUI stattdessen das **GUI-Archiv** der passenden CPU entpacken:
 
-   For an **approved private/self-hosted Gateway**, select the HTTPS authority at installation time using `./install.sh --gateway https://your-gateway.example --background on --tray on`. Use the Gateway URL you were given; this parameter changes routing, **not** product entitlement. Follow the normal browser approval to enroll your device. Never share enrollment codes, tokens or private keys in an issue.
+```bash
+./install.sh --background on --tray on
+```
 
-4. After installation, check the client locally with `~/.local/bin/meilleur-client status` and `~/.local/bin/meilleur-client version`. The persistent client state and enrollment are separate from replaceable app versions. **Updates are controlled by the assigned Gateway and signed release compatibility, not by selecting any newer GitHub tag.**
+Die Befehle `commander-client` und der ältere kompatible Alias `meilleur-client` stehen nach der Installation zur Verfügung. In bereits offenen Shells einmal `source ~/.bashrc` ausführen oder `~/.local/bin/commander-client` verwenden.
 
-For Linux servers without a desktop, wait for the **separately signed Linux Headless** package in the planned 2.2 release. The existing 2.1.0 universal package can run its Core without a GUI session, but still includes the desktop GUI binary and **is not** the final headless-only customer distribution.
+```bash
+commander-client setup
+commander-client status
+commander-client update --check
+```
 
-## Distribution and security contract
+Der Einrichtungsdialog fragt die **HTTPS-Gateway-Adresse** ab, zeigt einen Gerätecode und den Freigabelink. Die Kopplung wird im Browser bestätigt. Der Headless-Installer bietet zusätzlich eine **HTTPS-Webverwaltung im LAN** mit anfänglichem Administratorzugang und verpflichtendem Passwortwechsel. Zugangsdaten und einmaligen Aktivierungscode nur der lokalen Installationsausgabe entnehmen und nicht auf GitHub posten.
 
-- This repository stores immutable Linux **Release** assets, not application source, signing keys, credentials, customer data or Gateway configuration.
-- GitHub **Latest** is Linux-specific in this repository. It is a discovery hint, **not** permission to install, activate or downgrade a client.
-- The assigned Gateway selects an exact version and validates its RSA-signed manifest, artifact hash, Bridge protocol and Gateway compatibility before activation.
-- `channels/stable.json` is **untrusted discovery metadata**. The Gateway must verify the exact signed release manifest separately. A null release means nothing has yet been published here.
-- Existing artifacts and immutable tags in `pmeger/Meilleur-Commander-Releases` remain valid for currently activated installations. Never mutate old URLs, signatures or release assets.
+**Bestehende Installation?** Kein neues Archiv erforderlich: `commander-client update --check` und `commander-client update`. Bei einer Installation mit altem 2.2.1 zuerst `meilleur-client update` verwenden; der neue Name erscheint nach dem Upgrade automatisch. Pairing und gespeicherte Clientdaten bleiben erhalten.
 
-Canonical development: [Meilleur-Tech/Meilleur-Commander](https://github.com/Meilleur-Tech/Meilleur-Commander), issue [#536](https://github.com/Meilleur-Tech/Meilleur-Commander/issues/536). Linux GUI/Headless 2.2 tracking: [#1552](https://github.com/Meilleur-Tech/Meilleur-Commander/issues/1552). The release RSA authority is `mc-client-caf94007b07dc90b`; its private key stays exclusively on the Owner signing host, never on the Linux build runner or in this repository.
+## Die wichtigsten Befehle
+
+| Befehl | Funktion |
+|---|---|
+| `commander-client setup` | Gateway und Gerätefreigabe einrichten |
+| `commander-client status` | Gut lesbarer Verbindungsstatus |
+| `commander-client status --json` | Maschinenlesbare Diagnose |
+| `commander-client update --check` | Signierte Updates prüfen, als Terminalübersicht |
+| `commander-client update --check --json` | Maschinenlesbare Updateprüfung |
+| `commander-client update` | Zugewiesenes, signiertes Update installieren |
+| `commander-client update --json` | Update mit JSON-Ausgabe, auch im Terminal |
+| `commander-client rollback` | Vorherige installierte Version wiederherstellen, sofern vorhanden |
+| `commander-client web status` | Headless-WebUI-Adresse und Status anzeigen |
+| `commander-client web password reset` | Lokalen Headless-WebUI-Zugang zurücksetzen |
+| `commander-client logs` | Client-Ereignisse anzeigen |
+| `commander-client uninstall` | Programm entfernen, lokale Kopplungsdaten behalten |
+| `commander-client uninstall --purge` | Auch lokale Kopplungs-/Zugangsdaten entfernen |
+
+Die interaktive Linux-CLI zeigt Status, Updateprüfung, Update und Rollback als lesbare Textbox. Umgeleitete Aufrufe behalten die JSON-Ausgabe für Skripte und WebUI. Interne Datenverzeichnisse und systemd-Dienstnamen verwenden **aus Kompatibilitätsgründen weiterhin** `meilleur-client`.
+
+## Support & Sicherheit
+
+- [Installation und x64-Testablauf (DE)](docs/INSTALLATION.md)
+- [Häufige Probleme und Lösungen (DE)](docs/FEHLERBEHEBUNG.md)
+- [SHA-256-Prüfsummen aller acht 2.2.2-Dateien, Signatur und Kompatibilität](docs/SICHERHEIT-UND-KOMPATIBILITAET.md)
+- [Release 2.2.2 mit Änderungsübersicht](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/tag/linux-client-v2.2.2)
+- [Fehler/Verbesserungen melden](https://github.com/Meilleur-Tech/Meilleur-Commander/issues) (keine Tokens, Kennwörter oder Enrollment-Codes hochladen)
+
+**Keine pauschale NAS-Freigabe:** Synology DSM und QNAP QTS/QuTS benötigen eigene SPK-/QPKG-, libc-, Dienst- und Geräteprüfungen; ARMv7/32-Bit wird nicht unterstützt. Ein ARM64-Prozessor allein beweist keine NAS-Kompatibilität. [NAS-Tracking #1668](https://github.com/Meilleur-Tech/Meilleur-Commander/issues/1668).
+
+### Release-Vertrauensmodell
+
+Dieses Repository enthält öffentliche **Binärartefakte und Dokumentation**, nicht die privaten Signaturschlüssel. Das GitHub-Label **Latest** ist ein Downloadhinweis und keine automatische Erlaubnis für ein Update: Der installierte Client prüft die **RSA-signierte, vom Gateway zugewiesene** Releaseidentität, Paket-Hash, Architektur, GUI/Headless-Variante und Gateway-/Bridge-Kompatibilität. Unsignierte Downloads oder URL-Umstellungen dürfen diese Prüfungen nicht ersetzen.
+
+**Hinweis zu Altmetadaten:** `channels/stable.json` beschreibt derzeit noch das historische **2.1.0-x86_64-GUI-Einzelformat**. Es ist kein aktueller 2.2.2-Matrixkatalog und **keine** vertrauenswürdige Updatequelle. Für Downloads den GitHub-Release `latest`, für Updates den vom Gateway signiert zugewiesenen Kanal verwenden. Diese Datei wird nicht ohne angepassten Veröffentlichungsvertrag manuell überschrieben.
+
+Development: [Meilleur-Tech/Meilleur-Commander](https://github.com/Meilleur-Tech/Meilleur-Commander). Linux 2.2.2 source: `75ec797ceaa8a14e6be5710e4c9de73789f87749` · RSA key ID: `mc-client-caf94007b07dc90b`.
+
+---
+
+**English quick start:** Choose the native `GUI` or `HEADLESS` **.tar.gz** matching `uname -m`; extract, enter the extracted directory and run `./install.sh` as a normal user. Run `commander-client setup` to connect an HTTPS Gateway and approve device pairing in a browser. Use `commander-client status`, `commander-client update --check` and `commander-client update`. The legacy `meilleur-client` alias remains valid. Signed ZIPs are for managed updates, not manual first installation. Synology/QNAP are not certified. See the detailed German installation and troubleshooting guides above.

@@ -1,0 +1,8 @@
+3ac61b8a49ca996027e398b704fd2136fb48649020eeaf3c7f12d4f4dd9ec8e5  Meilleur-Commander-Client-Linux-GUI-arm64-2.2.2.tar.gz
+85a23ad87fb5f3f813f6a813dae6b4a209e43ab70d30530f45d1922710138e10  Meilleur-Commander-Client-Linux-HEADLESS-arm64-2.2.2.tar.gz
+8407bebf49298c5cfb5e69ec7c3ea9f7c7c6762c0bdcda24b94fa08a76f233ce  Meilleur-Commander-Client-Linux-HEADLESS-arm64-2.2.2.zip
+a87d9a5ebb7bd5a622ae1b72058d8a5ec47be309e3088a23df17fadeb1adf16e  Meilleur-Commander-Client-Linux-arm64-2.2.2.zip
+0fc683cebe1c98a633f4a933584aff5e86661db9a363edb9057d4d4f0d65aa54  Meilleur-Commander-Client-Linux-GUI-x86_64-2.2.2.tar.gz
+a0fb84952cd12249df1afa278f2c779fe65021ba7d20fb8a4fd37979746c8b43  Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.2.tar.gz
+07b6fe3dcfd357fd8f3cb34c7fb1ecce318584608aea8d7eddacb29fe80f4a28  Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.2.zip
+34cee34a3947e263eb2ed1f818e92bb38aee778c5c1852f949e06a3f631e4500  Meilleur-Commander-Client-Linux-x86_64-2.2.2.zip
