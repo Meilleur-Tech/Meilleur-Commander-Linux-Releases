@@ -2,7 +2,7 @@
 
 **Offizielle Linux-Downloads für Meilleur Commander** | Official Linux client distributions.
 
-[**Aktuelle Version herunterladen (Latest)**](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/latest) · [Installation (DE)](docs/INSTALLATION.md) · [Fehlerbehebung (DE)](docs/FEHLERBEHEBUNG.md) · [Prüfsummen & Sicherheit](docs/SICHERHEIT-UND-KOMPATIBILITAET.md)
+[**Aktuelle Version herunterladen (Latest)**](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/latest) · [Release-Änderungen 2.2.2](docs/RELEASE-NOTES-2.2.2.md) · [Installation (DE)](docs/INSTALLATION.md) · [Fehlerbehebung (DE)](docs/FEHLERBEHEBUNG.md) · [Prüfsummen & Sicherheit](docs/SICHERHEIT-UND-KOMPATIBILITAET.md)
 
 **Aktuelle Linux-Version: 2.2.2**, veröffentlicht für zwei CPU-Architekturen und zwei getrennte Clientvarianten. Native, RSA-signierte Updates bleiben an den vom Gateway zugewiesenen Updatekanal und die passende Plattform gebunden. Das Linux-Release ist unabhängig von Gateway-, Windows- und macOS-Versionen.
 
