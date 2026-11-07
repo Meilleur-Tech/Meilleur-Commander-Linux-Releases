@@ -37,6 +37,19 @@ Anschließend:
 
 Die Kopplung mit dem Gateway geschieht über den angezeigten Gerätecode und die Freigabe im Browser. Ein fehlender Gatewayzugriff ist keine Erlaubnis, unsignierte Updates zu installieren.
 
+## Bestehende Installationen 2.2.2 oder 2.2.3
+
+**Einmaliger Übergang:** Der alte Linux-Client zeigt bei `update --check` möglicherweise nur 2.2.2 oder 2.2.3 als aktuell an. Das ist der bisherige Gateway-Kanal, nicht der neue eigenständige Linux-OTA-Kanal. Die neue Kanal-Erkennung ist erst ab 2.2.4 im installierten Client enthalten. Deshalb 2.2.4 zunächst mit dem **signierten vollständigen TAR-Installer** der passenden Architektur/Variante über die vorhandene Installation installieren. Danach die bestehende Kopplung, WebUI-Einstellungen, Dienste und den vorherigen Rollback-Slot prüfen.
+
+**Legacy-Dateirechte:** Bei einem getesteten 2.2.2-Headless-Gerät war `~/.local/share/meilleur-client` mit Modus `0775` gruppenbeschreibbar. Die strengere 2.2.4-Metadatenprüfung beendet die Installation zu Recht mit `unsafe user metadata parent`. Wenn genau dieses Problem auftritt, als bisheriger Client-Benutzer zunächst prüfen, dass das Verzeichnis keine symbolische Verknüpfung ist und dem eigenen Benutzer gehört. Dann **nur das betroffene Verzeichnis** sichern und die Gruppen-Schreibberechtigung entfernen:
+
+```bash
+dir="$HOME/.local/share/meilleur-client"
+test -d "$dir" && test ! -L "$dir" && test -O "$dir" && chmod g-w "$dir"
+```
+
+Nicht rekursiv umberechtigen, keine Root-Installation und keinen Sicherheitscheck deaktivieren. Vor dem einmaligen Upgrade einen VM-Snapshot oder eine überprüfte Datensicherung erstellen. Die RSA-signierten Installer-Metadaten und Hashes sind vor der Installation zu überprüfen.
+
 ## Update und Rollback
 
 ```bash

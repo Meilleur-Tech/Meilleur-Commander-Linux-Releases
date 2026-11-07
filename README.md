@@ -48,7 +48,7 @@ commander-client update --check
 
 Der Einrichtungsdialog fragt die **HTTPS-Gateway-Adresse** ab, zeigt einen Gerätecode und den Freigabelink. Die Kopplung wird im Browser bestätigt. Der Headless-Installer bietet zusätzlich eine **HTTPS-Webverwaltung im LAN** mit anfänglichem Administratorzugang und verpflichtendem Passwortwechsel. Zugangsdaten und einmaligen Aktivierungscode nur der lokalen Installationsausgabe entnehmen und nicht auf GitHub posten.
 
-**Bestehende Installation?** Kein neues Archiv erforderlich: `commander-client update --check` und `commander-client update`. Bei einer Installation mit altem 2.2.1 zuerst `meilleur-client update` verwenden; der neue Name erscheint nach dem Upgrade automatisch. Pairing und gespeicherte Clientdaten bleiben erhalten.
+**Bestehende Installation?** Für den einmaligen Wechsel von 2.2.2/2.2.3 auf 2.2.4 ist das signierte vollständige TAR-Archiv erforderlich; die alten Clients kennen den neuen Linux-OTA-Kanal noch nicht. Danach funktionieren die unabhängigen signierten OTA-Updates, sobald der entsprechende öffentliche Kanal aktiv ist. Bei bereits auf 2.2.4 umgestellten Clients gilt: `commander-client update --check` und `commander-client update`. Bei einer Installation mit altem 2.2.1 zuerst `meilleur-client update` verwenden; der neue Name erscheint nach dem Upgrade automatisch. Pairing und gespeicherte Clientdaten bleiben erhalten.
 
 ## Die wichtigsten Befehle
 
