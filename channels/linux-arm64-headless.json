@@ -1,0 +1,12 @@
+{
+  "asset_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.4/Meilleur-Commander-Client-Linux-HEADLESS-arm64-2.2.4.zip",
+  "channel": "linux-arm64-headless",
+  "client_version": "2.2.4",
+  "manifest_sha256": "4ff9a6212c5c7f8202764d8462156905bb19194a0687a60488d54c4662fdf973",
+  "schema": "fabric-linux-independent-channel/v1",
+  "signature": {
+    "algorithm": "rsa-sha256",
+    "key_id": "mc-client-caf94007b07dc90b",
+    "value": "rasFzN4kdo8ZKJxKgNHYnLtR/5seoMPvDWUz7oiZrN4Q1YuucEC89cREsuw2YKjtr2a1iNDZu4Sy2HaFcepBBI41oGa40BjAFphbs7qyNtV9ycQX7sABPdL6HVJzyI0pOhSFI7EYMrBeB1jYZYUaoBYWhysNQsImuTTEqj51370vbddhb5E0wkJ/4xHfFUInOhYxOsnkwRr5UUB/ERroSLQQ9yS7J9I/i+Zb6HapuoY1DjvkviiH6MlsfrROQvIv+wcKjxVJSX8jeZEXeyXVYXfrk2OIy/t3F7AneyTQZmeRa62SIHaiZmPj1ISXFBv/gu6+o1OtmPw1PlfC3E8HPeybwH+1e5zTX8H0j9U6gcwad5zXNALDR1Jn3DDEmvPf4ixwKG5PlN4gqtalMX5IlHj5UZE433kVifoAWwh1yltPpJmyRYue2QYU28faErcojdh5p9Wtp0wcptALkbM6w6nv0aYgne6F7RygY8glTSR6ral+Yt/JnIIX6UvjSomX"
+  }
+}
