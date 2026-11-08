@@ -2,7 +2,7 @@
 
 **Offizielle Linux-Downloads für Fabric Commander** | Official Linux client distributions.
 
-[**Aktuelle Version herunterladen (Latest)**](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/latest) · [Release-Änderungen 2.2.4](docs/RELEASE-NOTES-2.2.4.md) · [Installation 2.2.4 (DE)](docs/INSTALLATION-2.2.4.md) · [Fehlerbehebung (DE)](docs/FEHLERBEHEBUNG.md) · [Prüfsummen & Sicherheit](docs/SICHERHEIT-UND-KOMPATIBILITAET.md)
+[**Aktuelle Version herunterladen (Latest)**](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/latest) · [Release-Änderungen 2.2.4](docs/RELEASE-NOTES-2.2.4.md) · [Installation 2.2.4 (DE)](docs/INSTALLATION-2.2.4.md) · [Fehlerbehebung (DE)](docs/FEHLERBEHEBUNG.md) · [Prüfsummen & Sicherheit 2.2.4](docs/SICHERHEIT-2.2.4.md)
 
 **Aktuelle Linux-Version: 2.2.4**, veröffentlicht für zwei CPU-Architekturen und zwei getrennte Clientvarianten. Native RSA-signierte Updates bleiben an die passende CPU-Architektur und GUI/Headless-Variante gebunden. Der unabhängige Linux-OTA-Kanal verifiziert zusätzliche signierte Kanaldeskriptoren und funktioniert bei einem ausgefallenen Gateway ohne eine Gateway-Freigabe. Das Linux-Release ist unabhängig von Gateway-, Windows- und macOS-Versionen.
 
@@ -82,11 +82,11 @@ Die interaktive Linux-CLI zeigt Status, Updateprüfung, Update und Rollback als 
 
 ### Release-Vertrauensmodell
 
-Dieses Repository enthält öffentliche **Binärartefakte und Dokumentation**, nicht die privaten Signaturschlüssel. Das GitHub-Label **Latest** ist ein Downloadhinweis und keine automatische Erlaubnis für ein Update: Der installierte Client prüft die **RSA-signierte, vom Gateway zugewiesene** Releaseidentität, Paket-Hash, Architektur, GUI/Headless-Variante und Gateway-/Bridge-Kompatibilität. Unsignierte Downloads oder URL-Umstellungen dürfen diese Prüfungen nicht ersetzen.
+Dieses Repository enthält öffentliche **Binärartefakte und Dokumentation**, nicht die privaten Signaturschlüssel. Das GitHub-Label **Latest** zeigt die öffentlich angebotene Version, ist aber **kein Signatur- oder Vertrauensbeweis**. Der Linux-Client 2.2.4 verwendet vier eigenständige öffentliche Kanaldeskriptoren für x86_64/ARM64 und GUI/Headless. Vor einer Installation prüft er mit seinem fest hinterlegten RSA-Vertrauensschlüssel den signierten Kanaldeskriptor, das signierte Release-Manifest, die SHA-256-Prüfsumme, Architektur, Variante und zulässige Version. **Gateway und Pairing sind für diese öffentliche Updateprüfung keine Voraussetzung.** Ein Owner-/Kundengateway kann getrennt davon für verwaltete Geräte eine bereits veröffentlichte Version freigeben oder zurückstellen; es darf weder den Linux-Client bauen noch als zwingende Paketquelle dienen. Die vier Kanalzeiger müssen bei jeder Latest-Veröffentlichung gemeinsam und geprüft aktiviert sein.
 
-**Hinweis zu Altmetadaten:** `channels/stable.json` beschreibt derzeit noch das historische **2.1.0-x86_64-GUI-Einzelformat**. Es ist kein aktueller 2.2.4-Matrixkatalog und **keine** vertrauenswürdige Updatequelle. Für Downloads den GitHub-Release `latest`, für Updates den vom Gateway signiert zugewiesenen Kanal verwenden. Diese Datei wird nicht ohne angepassten Veröffentlichungsvertrag manuell überschrieben.
+**Hinweis zu Altmetadaten:** `channels/stable.json` beschreibt nur das historische **2.1.0-x86_64-GUI-Einzelformat**. Für 2.2.4 gelten stattdessen die vier separat RSA-signierten öffentlichen Linux-Kanäle. Bei Bestandsinstallationen 2.2.2/2.2.3 ist der einmalige signierte Installer-Übergang nötig, da deren alter Updater noch den bisherigen Gateway-Kanal verwendet. Details stehen in der [aktuellen Sicherheitsbeschreibung](docs/SICHERHEIT-2.2.4.md).
 
-Development: [Meilleur-Tech/Meilleur-Commander](https://github.com/Meilleur-Tech/Meilleur-Commander). Linux 2.2.4 source: `6b298909ae5f7abf1b306841e2104e5a72a9a61b` · RSA key ID: `mc-client-caf94007b07dc90b`.
+Öffentliche Signaturidentität für Releaseprüfungen: RSA-Key-ID `mc-client-caf94007b07dc90b`. Dieses Repository enthält keine privaten Entwicklungsdateien oder Signierschlüssel.
 
 ---
 
