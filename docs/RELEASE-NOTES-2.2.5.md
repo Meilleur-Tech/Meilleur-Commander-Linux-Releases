@@ -15,3 +15,7 @@ Die vier nativen Varianten x86_64 GUI, x86_64 Headless, ARM64 GUI und ARM64 Head
 ## Installation, Rollback und Grenzen
 
 Neuinstallationen verwenden die passende TAR.GZ-Datei mit Installationsskript. ZIP-Dateien gehören zur signierten Updateversorgung. Die bisherige Linux-Kopplung und Benutzeridentität bleiben beim regulären In-Place-Update erhalten. Bei einem Fehler ist ein Rollback nur auf einen wirklich vorhandenen alten Installationsslot möglich. Eine fremde CPU-Architektur oder GUI/Headless-Variante darf nicht erzwungen werden. Zusätzliche fclient-Systemübersichten, ausführliche ASCII-Verbindungslogs und die VM-Klon-Identitätskorrektur gehören nicht zu diesem begrenzten 2.2.5-Release.
+
+## Geprüfter Quellstand
+
+Für den signierten Linux-2.2.5-Release ist der vollständige native Source SHA `97fdaf953046427d36f203c838db14def687f5b7` vorgesehen. Die tatsächliche Releasefreigabe erfordert genau diesen akzeptierten Source-Stand oder eine vor Veröffentlichung entsprechend aktualisierte, erneut geprüfte SHA.
