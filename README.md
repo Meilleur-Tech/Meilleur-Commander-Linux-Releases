@@ -74,7 +74,7 @@ Die interaktive Linux-CLI zeigt Status, Updateprüfung, Update und Rollback als 
 
 - [Installation und x64-Testablauf (DE)](docs/INSTALLATION.md)
 - [Häufige Probleme und Lösungen (DE)](docs/FEHLERBEHEBUNG.md)
-- [SHA-256-Prüfsummen aller acht 2.2.5-Dateien](docs/SHA256SUMS-2.2.5.txt)
+- [SHA-256-Prüfsummen der 20 signierten Release-Assets für 2.2.5](docs/SHA256SUMS-2.2.5.txt)
 - [Release 2.2.5 mit Änderungsübersicht](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/tag/linux-client-v2.2.5)
 - [Fehler/Verbesserungen melden](https://github.com/Meilleur-Tech/Meilleur-Commander/issues) (keine Tokens, Kennwörter oder Enrollment-Codes hochladen)
 
