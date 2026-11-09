@@ -1,81 +1,15 @@
-# Linux Client 2.2.2 · Fehlerbehebung
+# Fabric Commander Linux 2.2.5 · Fehlerbehebung
 
-[← README](../README.md) · [Installation](INSTALLATION.md) · [Sicherheit & Prüfsummen](SICHERHEIT-UND-KOMPATIBILITAET.md)
+[Downloads](../README.md) | [Installation](INSTALLATION.md) | [Sicherheit](SICHERHEIT-UND-KOMPATIBILITAET.md)
 
-## `commander-client: command not found`
+## Headless-Hosted-Anmeldung: account_browser_unavailable
 
-Der Installer installiert den Launcher unter `~/.local/bin/commander-client`. Ein bereits geöffnetes Terminal kennt den beim Installieren ergänzten PATH noch nicht.
+Version des installierten Clients mit commander-client status prüfen. Die alte öffentliche 2.2.4 unterstützt die Hosted-Kontoanmeldung auf einem Linux-Gerät ohne lokalen Browser nicht vollständig. Der korrigierte 2.2.5-Client stellt für die Hosted-Anbindung commander-client account connect bereit: Code und Bestätigungsadresse am Linux-Server anzeigen, auf einem zweiten Gerät im Browser anmelden und die Freigabe bestätigen. Der Linux-Server selbst benötigt keinen Desktop. Private Gateway-Kopplung ist ein anderer Weg und verwendet weiterhin commander-client setup.
 
-```bash
-source ~/.bashrc
-command -v commander-client
-~/.local/bin/commander-client status
-```
+## Updatequelle nicht erreichbar
 
-Nach einem **In-Place-Update von 2.2.1 auf 2.2.2** kann der neue Name erst beim regulären Dienststart/Status ergänzt werden. Dann ggf. einmal `meilleur-client status` verwenden und `command -v commander-client` erneut prüfen. Nicht die systemd-Dienste oder State-Verzeichnisse manuell umbenennen.
+Mit commander-client update --check die signierte Linux-Version prüfen. Ein neuer GitHub Latest stellt nur dann Updates bereit, wenn der vollständige architektur-/variantenrichtige RSA-signierte Kanal, Manifest und Paket-SHA256 vorhanden sind. Für schon installierte 2.2.4-Clients wird der bisherige signierte Legacy-Kanal bei der Veröffentlichung automatisch mitgeführt. Fehlt GitHub-Konnektivität oder stimmt ein Hash nicht, darf kein erzwungenes unsigniertes Ersatzpaket verwendet werden.
 
-## `Updatequelle nicht erreichbar`, `manifest_configured=false`, HTTP 404
+## Dienst oder Befehl nicht verfügbar
 
-Ein GitHub-Release allein schaltet ein Update **nicht** frei. Das **gekoppelte Gateway** muss der exakt passenden CPU-Architektur und GUI-/Headless-Variante eine **signierte** Update-URL zuweisen:
-
-```bash
-commander-client status --json
-commander-client update --check --json
-```
-
-Gateway-URL, Geräteidentität, Plattform und Version prüfen. Nicht eigenmächtig den x64-GUI-Kanal in einen ARM64-Headless-Client eintragen, kein `--force`, keine Signaturprüfung umgehen. Bei alten Gateways die Kanalzuweisung vom Betreiber aktualisieren lassen.
-
-## `client is running without a managed lifecycle` / `systemctl --user` fehlgeschlagen
-
-Der Client soll die laufende Bridge bei einem In-Place-Update geordnet über ihren **Benutzer-Dienst** verwalten. Aus einer fremden Root-/VM-Verwaltungssitzung fehlen ggf. `XDG_RUNTIME_DIR` und der D-Bus-User-Bus, obwohl der Dienst korrekt läuft.
-
-**Lösung:** als der normale installierende Linux-Benutzer anmelden, `systemctl --user status meilleur-client.service` und `commander-client status` prüfen. Nicht blind Prozesse beenden, nicht `sudo commander-client update` verwenden und keine Sicherheitsprüfung abschalten.
-
-## Falsche Architektur, `Exec format error` oder fehlende Bibliotheken
-
-```bash
-uname -m
-```
-
-`x86_64` braucht die x86_64-Datei, `aarch64`/`arm64` die ARM64-Datei. Bei Desktop-Fehlern die normalen Grafik-/Font-/D-Bus-/Qt-Systembibliotheken der Distribution prüfen. Für reine Server **Headless** verwenden, nicht versuchen, eine Desktop-GUI als „Headless“ zu starten. Synology und QNAP werden nicht allein aufgrund des CPU-Typs unterstützt.
-
-## Erstmaliger Headless-WebUI-Zugang / Passwort vergessen
-
-```bash
-commander-client web status
-commander-client web password reset
-```
-
-Die HTTPS-Adresse und den TLS-Zertifikatsfingerabdruck der lokalen Ausgabe entnehmen und vergleichen. Der erstmalige LAN-Zugang erfordert die vom Client angezeigten Zugangsdaten/den einmaligen Aktivierungscode und einen anschließenden Passwortwechsel. Nach erfolgreichem Passwortwechsel bleibt die neue Sitzung angemeldet. Das Webpasswort ist **nicht** für `commander-client update`, `status` oder die CLI-Kopplung erforderlich. Das Gerät niemals allein zur Reparatur des WebUI-Passworts unpairen.
-
-Bei `Forbidden`, `Origin mismatch` oder einem Browser, der keine Aktion zeigt: wirklich die angezeigte HTTPS-Adresse, den konfigurierten Port und Host verwenden. Kein `http://` und keine unkontrollierte Proxy-Host-Weiterleitung. Zertifikat nur nach Fingerabdruckprüfung akzeptieren.
-
-## GUI-Fenster startet, aber kein Tray-Icon
-
-Prüfen, ob die Desktop-Sitzung AppIndicator/KStatusNotifier unterstützt; bei Ubuntu GNOME/Wayland ggf. `ubuntu-appindicators@ubuntu.com` aktivieren und eine neue Sitzung starten. Ohne Host kann die GUI als normales Fenster laufen. Der reine Bridge-Dienst ist unabhängig davon.
-
-## Update erfolgreich, aber Version unverändert / GUI zeigt veraltete Shell
-
-```bash
-commander-client status
-commander-client status --json
-```
-
-Den registrierten Client-Core prüfen, nicht einen noch offenen alten GUI-Prozess. Im Desktop kann ein Fenster-Neustart notwendig sein, damit die Qt-Shell zum neuen Core passt. Ein manuell gestarteter alter Downloadordner ist nicht die installierte Anwendung. Bei Fehlern zuerst den signierten Update-/Rollbackstatus ermitteln.
-
-## Rollback nicht verfügbar
-
-`rollback` setzt einen zuvor installierten, kompatiblen lokalen Slot voraus. Bei frischer Installation oder nach Entfernung des alten Slots ist kein Rollback möglich. Ein Downgrade durch Kopieren eines alten Archivs ersetzt **keinen** signierten Rollback.
-
-## Verbindung oder Pairing fehlgeschlagen
-
-- `commander-client status` zeigt Gateway und Verbindungsstatus. Gateway muss über **HTTPS** erreichbar sein.
-- Nur den vom Gateway angezeigten Gerätecode und den zugehörigen Browser-Freigabelink verwenden. Niemals Token oder private Zertifikate in einem Issue posten.
-- Bei privater Root-CA muss der Administrator den geprüften Zertifikatsfingerabdruck und CA-Import bereitstellen. Kein `curl -k` als dauerhafter Fix, keine pauschale TLS-Abschaltung.
-- `commander-client setup` wiederholen. Nicht zuerst `uninstall --purge` oder `unpair` ausführen: Das würde die Kopplung verändern.
-
-## Diagnose für den Support
-
-Bitte nur **bereinigte** Angaben: Distribution, `uname -m`, GUI/Headless, Clientversion, Gatewayversion soweit öffentlich, exakter reproduzierbarer Fehler und ob es beim Neuinstallieren oder signierten Update auftritt. `commander-client status --json` kann IDs und Umgebungsinformationen enthalten; vor dem Teilen personenbezogene Werte und Gerätemetadaten entfernen. **Nie** Kennwörter, Tokens, Einmalcodes, private CA-Schlüssel oder kompletter State.
-
-[Fehler melden](https://github.com/Meilleur-Tech/Meilleur-Commander/issues).
+Bei nicht gefundenem commander-client eine neue Shell öffnen und ~/.local/bin/commander-client status versuchen. Den systemd-User-Dienst als ursprünglich installierenden Benutzer prüfen. Keine Benutzerdateien, Kopplungsdaten oder Credentials manuell entfernen. Bei Updatefehlern commander-client rollback verwenden, sofern ein alter Installationsslot existiert. GUI benötigt eine passende Desktoplaufzeit; Headless benötigt keine Desktopbibliotheken.
