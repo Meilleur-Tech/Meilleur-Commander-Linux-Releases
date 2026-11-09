@@ -1,4 +1,4 @@
-# Installation und Betrieb · Meilleur Commander Linux 2.2.2
+# Installation und Betrieb · Meilleur Commander Linux 2.2.5
 
 [← README](../README.md) · [Aktueller Release](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/latest) · [Fehlerbehebung](FEHLERBEHEBUNG.md)
 
@@ -8,7 +8,7 @@
 - Ein normaler Linux-Benutzer mit eigenem Home-Verzeichnis und Schreibrechten in `~/.local`; **nicht** als `root` oder mit `sudo ./install.sh` installieren.
 - Für GUI: funktionierende Desktop-/Grafikumgebung (z. B. GNOME/KDE) mit erforderlichen Display-, Grafik-, Font- und D-Bus-Bibliotheken.
 - Für Headless: keine Qt- oder Desktop-Bibliotheken nötig; für den dauerhaften Hintergrundbetrieb ist ein **systemd-User-Dienst** vorgesehen. Ein Server ohne passenden systemd-Benutzerdienst ist nicht automatisch freigegeben.
-- Erreichbarer HTTPS-Gateway mit aktivem Geräte-Pairing und für deine Plattform passendem signiertem Updatekanal. Bei einer privaten CA muss deren Fingerabdruck vorher durch den Administrator geprüft und das Systemvertrauen korrekt eingerichtet sein.
+- Für private Gateway-Kopplung: erreichbarer HTTPS-Gateway mit aktivem Geräte-Pairing. Für Hosted CTRL: Kontoanmeldung per commander-client account connect mit Bestätigung auf einem anderen Browsergerät. Native signierte Linux-Updates benötigen keine laufende Gateway-Instanz. Bei einer privaten CA muss deren Fingerabdruck vorher durch den Administrator geprüft und das Systemvertrauen korrekt eingerichtet sein.
 - Für die Headless-LAN-WebUI einen privaten IP-Zugang und einen Browser, mit dem das lokale TLS-Zertifikat anhand seines ausgegebenen SHA-256-Fingerabdrucks geprüft werden kann.
 
 Architektur:
@@ -23,15 +23,15 @@ uname -m
 
 ### Variante A: x86_64 Headless (Server, Chris' Testfall)
 
-1. Im [Release 2.2.2](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/tag/linux-client-v2.2.2) die Datei `Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.2.tar.gz` herunterladen.
-2. SHA-256 gegen die [offizielle Dateiliste](SHA256SUMS-2.2.2.txt) prüfen.
+1. Im [Release 2.2.5](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/tag/linux-client-v2.2.5) die Datei `Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.5.tar.gz` herunterladen.
+2. SHA-256 gegen die [offizielle Dateiliste](SHA256SUMS-2.2.5.txt) prüfen.
 3. Als normaler Benutzer:
 
 ```bash
 cd ~/Downloads
-sha256sum Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.2.tar.gz
-tar -xzf Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.2.tar.gz
-cd Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.2
+sha256sum Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.5.tar.gz
+tar -xzf Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.5.tar.gz
+cd Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.5
 ./install.sh
 ```
 
@@ -51,12 +51,12 @@ Der Setup-Dialog fragt die Gateway-HTTPS-Adresse ab. Nach Anforderung des Gerät
 
 ### Variante B: x86_64 GUI (Desktop, Chris' Testfall)
 
-Die Datei `Meilleur-Commander-Client-Linux-GUI-x86_64-2.2.2.tar.gz` laden und prüfen. Dann:
+Die Datei `Meilleur-Commander-Client-Linux-GUI-x86_64-2.2.5.tar.gz` laden und prüfen. Dann:
 
 ```bash
 cd ~/Downloads
-tar -xzf Meilleur-Commander-Client-Linux-GUI-x86_64-2.2.2.tar.gz
-cd Meilleur-Commander-Client-Linux-GUI-x86_64-2.2.2
+tar -xzf Meilleur-Commander-Client-Linux-GUI-x86_64-2.2.5.tar.gz
+cd Meilleur-Commander-Client-Linux-GUI-x86_64-2.2.5
 ./install.sh --background on --tray on
 commander-client status
 ~/.local/bin/meilleur-commander-client
@@ -77,7 +77,7 @@ Ein vorhandener 2.2.1-Client darf **ohne neue Installation** über seinen vom Ga
 meilleur-client update --check
 meilleur-client update
 
-# Danach, ab 2.2.2:
+# Danach, ab 2.2.5:
 commander-client status
 commander-client update --check
 commander-client update --check --json
@@ -96,7 +96,7 @@ commander-client rollback
 commander-client status
 ```
 
-Wenn zurück auf einen Stand vor 2.2.2 gewechselt wird, kann der alte Befehl `meilleur-client` als sichere Alternative weiterverwendet werden.
+Wenn zurück auf einen Stand vor 2.2.5 gewechselt wird, kann der alte Befehl `meilleur-client` als sichere Alternative weiterverwendet werden.
 
 ### JSON für Skripte
 
@@ -134,7 +134,7 @@ commander-client uninstall
 commander-client uninstall --purge
 ```
 
-Ohne `--purge` bleiben die lokalen Benutzer-/Kopplungsdaten erhalten. Nach einer `--purge`-Entfernung ist eine erneute Gerätefreigabe erforderlich. Nicht mit älteren separaten `.deb`-Preview-Installationen verwechseln: Die hier beschriebenen **2.2.2-Assets sind TAR.GZ und signierte Update-ZIPs, keine .deb-Dateien**.
+Ohne `--purge` bleiben die lokalen Benutzer-/Kopplungsdaten erhalten. Nach einer `--purge`-Entfernung ist eine erneute Gerätefreigabe erforderlich. Nicht mit älteren separaten `.deb`-Preview-Installationen verwechseln: Die hier beschriebenen **2.2.5-Assets sind TAR.GZ und signierte Update-ZIPs, keine .deb-Dateien**.
 
 ## Abnahmeprotokoll für Chris
 
@@ -146,7 +146,12 @@ Bei der ersten x86_64-Abnahme am besten diese Ergebnisse notieren, ohne Geheimni
 4. Gateway/Pairing erfolgreich; Verbindungsanzeige bleibt auf **verbunden**.
 5. Headless: HTTPS-WebUI, Passwortwechsel, Gateway-Auswahl und WebUI-Updateprüfung testen. GUI: sichtbares Fenster, Tray-Fallback und Updatefunktion.
 6. `commander-client update --check` zeigt die neue Terminalübersicht; `--json` liefert gültiges JSON.
-7. Falls eine ältere signierte Version als Ausgangspunkt vorhanden ist: 2.2.1 → 2.2.2 und Rollback prüfen; Geräteidentität vor/nach Update gleich.
+7. Falls eine ältere signierte Version als Ausgangspunkt vorhanden ist: 2.2.1 → 2.2.5 und Rollback prüfen; Geräteidentität vor/nach Update gleich.
 8. Fehlersuche ohne vertrauliche Daten über [Fehlerbehebung](FEHLERBEHEBUNG.md), danach reproduzierbaren Befund im [Commander-Issue-Tracker](https://github.com/Meilleur-Tech/Meilleur-Commander/issues) dokumentieren.
 
-**Abnahmestand:** ARM64 Headless 2.2.1 → 2.2.2 → 2.2.1 mit erhaltener Verbindung/Pairing erfolgreich getestet. Ein breiter, unabhängiger x86_64-GUI-/Headless-Endkundentest und NAS-Pakete werden damit **nicht** behauptet.
+**Abnahmestand:** ARM64 Headless 2.2.1 → 2.2.5 → 2.2.1 mit erhaltener Verbindung/Pairing erfolgreich getestet. Ein breiter, unabhängiger x86_64-GUI-/Headless-Endkundentest und NAS-Pakete werden damit **nicht** behauptet.
+
+
+## Linux 2.2.5: Hosted-Kontoanmeldung ohne lokalen Browser
+
+Auf einem Headless-Server commander-client account connect starten, angezeigte Verifikationsadresse auf einem anderen Browsergerät öffnen und den einmaligen Code bestätigen. Der Linux-Server selbst benötigt keinen lokalen Browser. Für private Gateway-Kopplung bleibt commander-client setup verfügbar. Bereits installierte 2.2.4-Clients verwenden den bisherigen signierten Kanal für den ersten Übergang auf 2.2.5, danach GitHub Latest.

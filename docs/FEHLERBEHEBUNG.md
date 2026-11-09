@@ -1,4 +1,4 @@
-# Linux Client 2.2.2 · Fehlerbehebung
+# Linux Client 2.2.5 · Fehlerbehebung
 
 [← README](../README.md) · [Installation](INSTALLATION.md) · [Sicherheit & Prüfsummen](SICHERHEIT-UND-KOMPATIBILITAET.md)
 
@@ -12,7 +12,7 @@ command -v commander-client
 ~/.local/bin/commander-client status
 ```
 
-Nach einem **In-Place-Update von 2.2.1 auf 2.2.2** kann der neue Name erst beim regulären Dienststart/Status ergänzt werden. Dann ggf. einmal `meilleur-client status` verwenden und `command -v commander-client` erneut prüfen. Nicht die systemd-Dienste oder State-Verzeichnisse manuell umbenennen.
+Nach einem **In-Place-Update von 2.2.1 auf 2.2.5** kann der neue Name erst beim regulären Dienststart/Status ergänzt werden. Dann ggf. einmal `meilleur-client status` verwenden und `command -v commander-client` erneut prüfen. Nicht die systemd-Dienste oder State-Verzeichnisse manuell umbenennen.
 
 ## `Updatequelle nicht erreichbar`, `manifest_configured=false`, HTTP 404
 
@@ -79,3 +79,8 @@ Den registrierten Client-Core prüfen, nicht einen noch offenen alten GUI-Prozes
 Bitte nur **bereinigte** Angaben: Distribution, `uname -m`, GUI/Headless, Clientversion, Gatewayversion soweit öffentlich, exakter reproduzierbarer Fehler und ob es beim Neuinstallieren oder signierten Update auftritt. `commander-client status --json` kann IDs und Umgebungsinformationen enthalten; vor dem Teilen personenbezogene Werte und Gerätemetadaten entfernen. **Nie** Kennwörter, Tokens, Einmalcodes, private CA-Schlüssel oder kompletter State.
 
 [Fehler melden](https://github.com/Meilleur-Tech/Meilleur-Commander/issues).
+
+
+## Linux 2.2.5: Hosted Headless / account_browser_unavailable
+
+commander-client status muss die Version 2.2.5 anzeigen. commander-client account connect liefert einen Code und eine Bestätigungsadresse, die auf einem anderen Gerät im Browser geöffnet werden. Der Headless-Server benötigt keinen Browser. Die private Gateway-Kopplung über commander-client setup bleibt ein eigener Weg. Für den Übergang von 2.2.4 ist der vorhandene signierte OTA-Kanal vorgesehen, nicht ein unsigniertes Archiv.
