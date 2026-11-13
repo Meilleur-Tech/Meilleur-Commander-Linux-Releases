@@ -1,12 +1,12 @@
 {
-  "asset_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-x86_64-2.2.5.zip",
+  "asset_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.7/Meilleur-Commander-Client-Linux-x86_64-2.2.7.zip",
   "channel": "linux-x86_64-gui",
-  "client_version": "2.2.5",
-  "manifest_sha256": "4e88ec54a0ec0b1d3085f03fb40a7c5a934c88040281170f6524f58d18d64fc9",
+  "client_version": "2.2.7",
+  "manifest_sha256": "3e65a2a9e1ec59a968c370beeb59731c6e08dc32b716859bf65f0d3884a2aaab",
   "schema": "fabric-linux-independent-channel/v1",
   "signature": {
     "algorithm": "rsa-sha256",
     "key_id": "mc-client-caf94007b07dc90b",
-    "value": "PvUMyszVNuc9Bp/K8JrbXzgsAewD/YTXSUjD9zzmLIPCKcSgOlmV09pRWHkqp6JZwqb+ojqxPM0J1TBjK9g5z3xGxV1PXT+6O80+r4XXnvLWhJWDTw9Cw5Gvw74e9S8mvZ1wypu0IhofaGFpXCYCTdk0vKRudRtuvIydGV5Xa2UKC05Ly2SNUK9/tWhEtgTZ5cQgc7IMnCCsp1/zciele6jLcRkFXR4n2NWBYfu5mP9zrJYQ3db356j0EpdBgnoMxAmr0+jQzpuNCaPpqoTGRoI4tqF+uRBY3RVkl9SoFxL55beVX4RWEhZyg+SgTSZxBiFx+N5Mx8DT1R+W5hjbRE8vKmT1c+7M++2sjbgmfqcSU2ELBlofuWeo6gmhLlq49Kt6bFwg2uS8kwRSpfKSizqwcOFprYfNmrSNkI/mV+JLF0XSe1lUEbeWhILGsEUB6G2yGK1gIdK+3XnVnyYUGZaSWXoAWNxady26kSTJ3jOCZHnt2Uaa0kGHw3BaFpOI"
+    "value": "oDwT+eii4zh9z7VjxDZq76Y7o3Gsr3C4lTbELCDxVIqtroNTPvTnBS/WVvepP8SfBarZuoFgUH8zjOI0jrgCcBtz9CwEYmjpWB/bvRrHHwLUZAsWnxymsCxCriJ6Tv4CG05V+zm0tAPCQB0wKmtwhwNmhENse+joZijRk2yN2K3G1s0cNQKxNdVtIBJRGn+sRR06OyyJFvnzlKStG8Up6DsPh6sV1z3UdA9oJgvhdSKhh+foVGwzADUb9TmKpE0h5G3QsnFtuj5pLseh19EteQMT2nkL++iZn8NuIViT1nCiJWG18pUvr+Ke/paGTj57y11Ni2aXB5YwRAcD0G8Ot4JZkce5b3gdnvKxXExkHY267OmPZoQhkfpiISWqhbxIgSngJzteiijpKUlXZV2htDlO4bnYHQSCSCSyXns1MOgchHe+Qx524wILZRBQEcCnzj9/O1xqbmK2J0ZwqYCALdQZErk4cjUOHNSqd482GmNT+UG5blh9IJRH2isSwXp3"
   }
 }
