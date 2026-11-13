@@ -1,0 +1,65 @@
+{
+  "channel": "stable",
+  "note": "Untrusted discovery only: installed RSA trust, SHA256, OS/arch/variant and explicit Gateway selection are authoritative.",
+  "platform": "linux",
+  "release": {
+    "arch": "arm64",
+    "artifact_source": {
+      "client_build": "sha256:9454764e71011c7bb63600e1637f30f8e1cf73f30b43fa2f5f51ae439bd66f1b",
+      "client_version": "2.2.5",
+      "schema": "meilleur-client-release-artifact-source/v1",
+      "sha256": "48b4af164c3598390e0630ea9baddc573b737dc46f22d2b0bcdb004f11bb93b8",
+      "source_commit": "5ff4b37285810637365b8039c5552aee987e572c",
+      "url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-arm64-2.2.5.zip",
+      "version": 1
+    },
+    "asset_size_bytes": 80353248,
+    "asset_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-arm64-2.2.5.zip",
+    "client_build": "sha256:9454764e71011c7bb63600e1637f30f8e1cf73f30b43fa2f5f51ae439bd66f1b",
+    "compatibility": {
+      "bridge_protocol": {
+        "maximum": 1,
+        "minimum": 1
+      },
+      "gateway_version": {
+        "maximum": "2.9.9",
+        "minimum": "2.0.5"
+      }
+    },
+    "manifest": {
+      "arch": "arm64",
+      "artifact": "package.zip",
+      "client_build": "sha256:9454764e71011c7bb63600e1637f30f8e1cf73f30b43fa2f5f51ae439bd66f1b",
+      "client_version": "2.2.5",
+      "compatibility": {
+        "bridge_protocol": {
+          "maximum": 1,
+          "minimum": 1
+        },
+        "gateway_version": {
+          "maximum": "2.9.9",
+          "minimum": "2.0.5"
+        }
+      },
+      "os": "linux",
+      "schema": "meilleur-client-release/v2",
+      "sha256": "48b4af164c3598390e0630ea9baddc573b737dc46f22d2b0bcdb004f11bb93b8",
+      "signature": {
+        "algorithm": "rsa-sha256",
+        "key_id": "mc-client-caf94007b07dc90b",
+        "value": "lscjxfL5BJOHcya0kYOhUFokAyAXUYFoEwiqLTu33Wp5bqRXdxwuQn7FIVqWAXDA2k2wtMDySGsOkrGIT/yeVI1Q+QoQOI0R+xW7v7MxUXmHqD/ESBg9KtnE8hTebCsAI/uXdM2Sa/GyKHdPOMkD/swXj4WBPwdV5Lp4Yhwebqaf9FCGe6jfIkFdliY/A07F/9oFyo5W8V++mXx7beAuf8FbR/mz6K3bTs0KFYXd5ytVRST0dqSmDRalgskVzaDOM1Ul2ybnV/WT9SRcCYds0a2SrOol022Nr2J6YBdOdoILLNXKIcwDR5Wm2WjsdosKAkrDtexG1bC+MnWPRy3gayf0HFelxmaAAo0xlj64InT2a6ZVVVwXaanFirQ0FH34aqPxEQYLO1uYd975+Ycn3BY+p1EchqySPSr+rgbujrJnTMMW+0qie7lpa2L/mVvpShE/Ca1airZPw8ibaXn3JEnKW11ozb8oRwHxLcjz9u8IHAAG3m7tQ2Alz/lMhgcJ"
+      },
+      "source_commit": "5ff4b37285810637365b8039c5552aee987e572c",
+      "version": 2
+    },
+    "manifest_key_id": "mc-client-caf94007b07dc90b",
+    "manifest_sha256": "14d4771412d9f2a2fd5132506a52f7a685da7ba5f468a01be56abc1d8e2b8774",
+    "sha256": "48b4af164c3598390e0630ea9baddc573b737dc46f22d2b0bcdb004f11bb93b8",
+    "source_commit": "5ff4b37285810637365b8039c5552aee987e572c",
+    "supersedes": "2.2.4",
+    "tag": "linux-client-v2.2.5",
+    "version": "2.2.5"
+  },
+  "schema": "meilleur-client-public-release-index/v1",
+  "status": "published"
+}

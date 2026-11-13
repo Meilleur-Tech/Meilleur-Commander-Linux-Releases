@@ -1,0 +1,92 @@
+{
+  "assets": [
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-HEADLESS-arm64-2.2.5.zip",
+      "digest": "sha256:d0393a8b7498b2d7e5318bd7c05fad4e0e7272767ada0337278db3acc318b240",
+      "name": "Meilleur-Commander-Client-Linux-HEADLESS-arm64-2.2.5.zip",
+      "size": 33724729,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.5.zip",
+      "digest": "sha256:39d9ff1cb41c166fb0b12ea4d702e0cfdb5ae6ef8b1c6ffcbd747ddbd39c41f1",
+      "name": "Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.5.zip",
+      "size": 35153596,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-arm64-2.2.5.zip",
+      "digest": "sha256:48b4af164c3598390e0630ea9baddc573b737dc46f22d2b0bcdb004f11bb93b8",
+      "name": "Meilleur-Commander-Client-Linux-arm64-2.2.5.zip",
+      "size": 80353248,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-x86_64-2.2.5.zip",
+      "digest": "sha256:8a4c31f2a2e6fd86adaf560684b406c1c83fbfff6fea5a0bde9bc32ca54518f1",
+      "name": "Meilleur-Commander-Client-Linux-x86_64-2.2.5.zip",
+      "size": 84675242,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/fabric-linux-arm64-gui-2.2.5-channel.json",
+      "digest": "sha256:1441c02776110c1e4e6ec3cada63237d46ac3b43daf81058c5cf64d05a101a9b",
+      "name": "fabric-linux-arm64-gui-2.2.5-channel.json",
+      "size": 1000,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/fabric-linux-arm64-gui-2.2.5-manifest.json",
+      "digest": "sha256:14d4771412d9f2a2fd5132506a52f7a685da7ba5f468a01be56abc1d8e2b8774",
+      "name": "fabric-linux-arm64-gui-2.2.5-manifest.json",
+      "size": 1195,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/fabric-linux-arm64-headless-2.2.5-channel.json",
+      "digest": "sha256:3f812b55c138fd46ab51034267b7928256faadeed47704319b2fa10e63edbf6a",
+      "name": "fabric-linux-arm64-headless-2.2.5-channel.json",
+      "size": 1014,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/fabric-linux-arm64-headless-2.2.5-manifest.json",
+      "digest": "sha256:39d98ea1c9ad7b615cf98087248f9d6234568a30835df2ac01ba67414e31b662",
+      "name": "fabric-linux-arm64-headless-2.2.5-manifest.json",
+      "size": 1195,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/fabric-linux-x86_64-gui-2.2.5-channel.json",
+      "digest": "sha256:4a8d3b0f020e3d30c1e77b5d38b9a3ec1a3c9a62c76eebccb470adcb118043ce",
+      "name": "fabric-linux-x86_64-gui-2.2.5-channel.json",
+      "size": 1002,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/fabric-linux-x86_64-gui-2.2.5-manifest.json",
+      "digest": "sha256:cdfe784d4f5544cec09ed33f66be687e59ea3094dd31a9459cf15c4f158f6e14",
+      "name": "fabric-linux-x86_64-gui-2.2.5-manifest.json",
+      "size": 1196,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/fabric-linux-x86_64-headless-2.2.5-channel.json",
+      "digest": "sha256:d26deefe18b1a8e5fad634321044d82545970ea80d70e2b37a79bd09ac61543a",
+      "name": "fabric-linux-x86_64-headless-2.2.5-channel.json",
+      "size": 1016,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/fabric-linux-x86_64-headless-2.2.5-manifest.json",
+      "digest": "sha256:c4193c2bfba224c24a3df78d1b7ae32ff7a1cadb09be05de4cbb6b07a07a9aad",
+      "name": "fabric-linux-x86_64-headless-2.2.5-manifest.json",
+      "size": 1196,
+      "state": "uploaded"
+    }
+  ],
+  "draft": false,
+  "prerelease": false,
+  "schema": "fabric-client-public-latest/v1",
+  "tag_name": "linux-client-v2.2.5"
+}
