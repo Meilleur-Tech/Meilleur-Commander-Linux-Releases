@@ -1,3 +1,18 @@
+# Linux 2.2.7 · Signatur und Kompatibilität
+
+Die nativen Linux-2.2.7-Pakete x86_64 GUI/Headless und ARM64 GUI/Headless
+sind mit dem bisherigen RSA-Release-Schlüssel signiert und mit den
+[öffentlichen SHA-256-Werten](SHA256SUMS-2.2.7.txt) dokumentiert. Der Client
+prüft vor einem Update Signatur, Paket-Hash, Architektur und Variante.
+Weder Gateway-Version noch anonyme GitHub-API sind eine zusätzliche
+Binary-Freigabe. Bei bereits verbundenen Geräten verlangt der Wechsel des
+Verbindungsziels die ausdrückliche Trennung und neue Pairing-Bestätigung.
+Die native x64 CI und ARM64 Binärtests sind erfolgreich. Eine Prüfung
+aller Linux-Distributionen oder externer Kundeninstallationen ist nicht
+behauptet.
+
+## Archivierte Linux-2.2.5-Nachweise
+
 # Linux 2.2.5 · Sicherheit, Prüfsummen und Kompatibilität
 
 [← README](../README.md) · [Installation](INSTALLATION.md) · [Aktueller Release](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/tag/linux-client-v2.2.5)

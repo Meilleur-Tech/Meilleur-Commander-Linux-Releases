@@ -2,9 +2,13 @@
 
 **Offizielle Linux-Downloads für Fabric Commander** | Official Linux client distributions.
 
-[**Aktuelle Version herunterladen (Latest)**](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/latest) · [Release-Änderungen 2.2.5](docs/RELEASE-NOTES-2.2.5.md) · [Installation 2.2.5 (DE)](docs/INSTALLATION-2.2.5.md) · [Fehlerbehebung (DE)](docs/FEHLERBEHEBUNG.md) · [Prüfsummen & Sicherheit 2.2.5](docs/SICHERHEIT-2.2.5.md)
+[**Aktuelle Version herunterladen (Latest)**](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/latest) · [Release-Änderungen 2.2.7](docs/RELEASE-NOTES-2.2.7.md) · [Installation 2.2.7 (DE)](docs/INSTALLATION-2.2.7.md) · [Fehlerbehebung (DE)](docs/FEHLERBEHEBUNG.md) · [Prüfsummen & Sicherheit 2.2.7](docs/SICHERHEIT-2.2.7.md)
 
-**Vorbereiteter Linux-Release 2.2.5**, verfügbar nach signierter Freigabe für zwei CPU-Architekturen und zwei getrennte Clientvarianten. Native RSA-signierte Updates bleiben an die passende CPU-Architektur und GUI/Headless-Variante gebunden. Der unabhängige Linux-OTA-Kanal verifiziert zusätzliche signierte Kanaldeskriptoren und funktioniert bei einem ausgefallenen Gateway ohne eine Gateway-Freigabe. Das Linux-Release ist unabhängig von Gateway-, Windows- und macOS-Versionen.
+**Aktueller Linux-Release 2.2.7**, vollständig signiert und veröffentlicht für zwei CPU-Architekturen und zwei getrennte Clientvarianten. Native RSA-signierte Updates bleiben an die passende CPU-Architektur und GUI/Headless-Variante gebunden. Der unabhängige Linux-OTA-Kanal verifiziert zusätzliche signierte Kanaldeskriptoren und funktioniert bei einem ausgefallenen Gateway ohne eine Gateway-Freigabe. Das Linux-Release ist unabhängig von Gateway-, Windows- und macOS-Versionen.
+
+2.2.7 bringt eine verständliche Hosted-/Private-Gateway-Auswahl,
+eine erweiterte fclient-Hilfe und API-freie öffentliche Update-Erkennung.
+Eine bestehende Kopplung wird beim Zielwechsel niemals automatisch gelöscht.
 
 ## Welche Datei brauche ich?
 
@@ -16,10 +20,10 @@ uname -m
 
 | System | Desktop mit GUI | Server ohne Desktop (Headless) |
 |---|---|---|
-| `x86_64` (AMD/Intel 64 Bit) | [GUI x86_64 2.2.5](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-GUI-x86_64-2.2.5.tar.gz) | [Headless x86_64 2.2.5](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.5.tar.gz) |
-| `aarch64` / `arm64` (ARM 64 Bit) | [GUI ARM64 2.2.5](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-GUI-arm64-2.2.5.tar.gz) | [Headless ARM64 2.2.5](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-HEADLESS-arm64-2.2.5.tar.gz) |
+| `x86_64` (AMD/Intel 64 Bit) | [GUI x86_64 2.2.7](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.7/Meilleur-Commander-Client-Linux-GUI-x86_64-2.2.7.tar.gz) | [Headless x86_64 2.2.7](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.7/Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.7.tar.gz) |
+| `aarch64` / `arm64` (ARM 64 Bit) | [GUI ARM64 2.2.7](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.7/Meilleur-Commander-Client-Linux-GUI-arm64-2.2.7.tar.gz) | [Headless ARM64 2.2.7](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.7/Meilleur-Commander-Client-Linux-HEADLESS-arm64-2.2.7.tar.gz) |
 
-**Für die Neuinstallation die `.tar.gz`-Datei laden.** Die vier zusätzlich veröffentlichten `.zip`-Dateien sind die **architektur- und variantenabhängigen signierten Updatepakete**. Sie sind keine zweite Installationsmethode. Für 2.2.5 wird in diesem Release **kein .deb, .rpm, Synology-SPK oder QNAP-QPKG** bereitgestellt.
+**Für die Neuinstallation die `.tar.gz`-Datei laden.** Die vier zusätzlich veröffentlichten `.zip`-Dateien sind die **architektur- und variantenabhängigen signierten Updatepakete**. Sie sind keine zweite Installationsmethode. Für 2.2.7 wird in diesem Release **kein .deb, .rpm, Synology-SPK oder QNAP-QPKG** bereitgestellt.
 
 ## In wenigen Minuten installieren
 
@@ -27,8 +31,8 @@ Keine Root-Installation, kein Git-Checkout und keine eigene Python-Umgebung nöt
 
 ```bash
 cd ~/Downloads
-tar -xzf Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.5.tar.gz
-cd Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.5
+tar -xzf Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.7.tar.gz
+cd Meilleur-Commander-Client-Linux-HEADLESS-x86_64-2.2.7
 ./install.sh
 ```
 
@@ -48,7 +52,7 @@ commander-client update --check
 
 **Hosted CTRL Headless:** Im Linux-Terminal commander-client account connect starten. Die angezeigte Bestätigungsadresse samt einmaligem Code auf einem anderen Rechner oder Smartphone im Browser öffnen, beim Kundenkonto bestätigen und die Rückmeldung im Terminal abwarten. Auf dem Linux-Server ist dafür kein lokaler Browser nötig. **Privates Gateway:** Mit commander-client setup bleibt die bestehende direkte Gateway-Kopplung verfügbar. Der Headless-Installer bietet zusätzlich eine **HTTPS-Webverwaltung im LAN** mit anfänglichem Administratorzugang und verpflichtendem Passwortwechsel. Zugangsdaten und einmaligen Aktivierungscode nur der lokalen Installationsausgabe entnehmen und nicht auf GitHub posten.
 
-**Bestehende Installation?** Von Linux 2.2.4 auf 2.2.5 erfolgt das signierte Update über den bisherigen kompatiblen, signierten 2.2.4-Kanal und anschließend den unabhängigen GitHub-Latest-Kanal. Befehl: commander-client update --check, danach commander-client update. Ältere 2.2.2/2.2.3-Geräte benötigen zuerst ein vollständiges signiertes TAR-Upgrade, weil sie keinen eigenständigen Linux-OTA-Kanal besitzen. Kopplung und lokale Clientdaten bleiben erhalten; Rollback verwendet einen vorhandenen alten Slot.
+**Bestehende Installation?** Von Linux 2.2.4 auf 2.2.7 erfolgt das signierte Update über den bisherigen kompatiblen, signierten 2.2.4-Kanal und anschließend den unabhängigen GitHub-Latest-Kanal. Befehl: commander-client update --check, danach commander-client update. Ältere 2.2.2/2.2.3-Geräte benötigen zuerst ein vollständiges signiertes TAR-Upgrade, weil sie keinen eigenständigen Linux-OTA-Kanal besitzen. Kopplung und lokale Clientdaten bleiben erhalten; Rollback verwendet einen vorhandenen alten Slot.
 
 ## Die wichtigsten Befehle
 
@@ -74,17 +78,17 @@ Die interaktive Linux-CLI zeigt Status, Updateprüfung, Update und Rollback als 
 
 - [Installation und x64-Testablauf (DE)](docs/INSTALLATION.md)
 - [Häufige Probleme und Lösungen (DE)](docs/FEHLERBEHEBUNG.md)
-- [SHA-256-Prüfsummen der 20 signierten Release-Assets für 2.2.5](docs/SHA256SUMS-2.2.5.txt)
-- [Release 2.2.5 mit Änderungsübersicht](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/tag/linux-client-v2.2.5)
+- [SHA-256-Prüfsummen der 20 signierten Release-Assets für 2.2.7](docs/SHA256SUMS-2.2.7.txt)
+- [Release 2.2.7 mit Änderungsübersicht](https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/tag/linux-client-v2.2.7)
 - [Fehler/Verbesserungen melden](https://github.com/Meilleur-Tech/Meilleur-Commander/issues) (keine Tokens, Kennwörter oder Enrollment-Codes hochladen)
 
 **Keine pauschale NAS-Freigabe:** Synology DSM und QNAP QTS/QuTS benötigen eigene SPK-/QPKG-, libc-, Dienst- und Geräteprüfungen; ARMv7/32-Bit wird nicht unterstützt. Ein ARM64-Prozessor allein beweist keine NAS-Kompatibilität. [NAS-Tracking #1668](https://github.com/Meilleur-Tech/Meilleur-Commander/issues/1668).
 
 ### Release-Vertrauensmodell
 
-Dieses Repository enthält öffentliche **Binärartefakte und Dokumentation**, nicht die privaten Signaturschlüssel. Das GitHub-Label **Latest** zeigt die öffentlich angebotene Version, ist aber **kein Signatur- oder Vertrauensbeweis**. Der Linux-Client 2.2.5 verwendet vier eigenständige öffentliche Kanaldeskriptoren für x86_64/ARM64 und GUI/Headless. Vor einer Installation prüft er mit seinem fest hinterlegten RSA-Vertrauensschlüssel den signierten Kanaldeskriptor, das signierte Release-Manifest, die SHA-256-Prüfsumme, Architektur, Variante und zulässige Version. **Gateway und Pairing sind für diese öffentliche Updateprüfung keine Voraussetzung.** Ein Owner-/Kundengateway kann getrennt davon für verwaltete Geräte eine bereits veröffentlichte Version freigeben oder zurückstellen; es darf weder den Linux-Client bauen noch als zwingende Paketquelle dienen. Die vier Kanalzeiger müssen bei jeder Latest-Veröffentlichung gemeinsam und geprüft aktiviert sein.
+Dieses Repository enthält öffentliche **Binärartefakte und Dokumentation**, nicht die privaten Signaturschlüssel. Das GitHub-Label **Latest** zeigt die öffentlich angebotene Version, ist aber **kein Signatur- oder Vertrauensbeweis**. Der Linux-Client 2.2.7 verwendet vier eigenständige öffentliche Kanaldeskriptoren für x86_64/ARM64 und GUI/Headless. Vor einer Installation prüft er mit seinem fest hinterlegten RSA-Vertrauensschlüssel den signierten Kanaldeskriptor, das signierte Release-Manifest, die SHA-256-Prüfsumme, Architektur, Variante und zulässige Version. **Gateway und Pairing sind für diese öffentliche Updateprüfung keine Voraussetzung.** Ein Owner-/Kundengateway kann getrennt davon für verwaltete Geräte eine bereits veröffentlichte Version freigeben oder zurückstellen; es darf weder den Linux-Client bauen noch als zwingende Paketquelle dienen. Die vier Kanalzeiger müssen bei jeder Latest-Veröffentlichung gemeinsam und geprüft aktiviert sein.
 
-**Hinweis zu Altmetadaten:** `channels/stable.json` beschreibt nur das historische **2.1.0-x86_64-GUI-Einzelformat**. Für 2.2.5 gelten stattdessen die vier separat RSA-signierten öffentlichen Linux-Kanäle. Bei Bestandsinstallationen 2.2.2/2.2.3 ist der einmalige signierte Installer-Übergang nötig, da deren alter Updater noch den bisherigen Gateway-Kanal verwendet. Details stehen in der [aktuellen Sicherheitsbeschreibung](docs/SICHERHEIT-2.2.5.md).
+**Hinweis zu Altmetadaten:** `channels/stable.json` beschreibt nur das historische **2.1.0-x86_64-GUI-Einzelformat**. Für 2.2.7 gelten stattdessen die vier separat RSA-signierten öffentlichen Linux-Kanäle. Bei Bestandsinstallationen 2.2.2/2.2.3 ist der einmalige signierte Installer-Übergang nötig, da deren alter Updater noch den bisherigen Gateway-Kanal verwendet. Details stehen in der [aktuellen Sicherheitsbeschreibung](docs/SICHERHEIT-2.2.7.md).
 
 Öffentliche Signaturidentität für Releaseprüfungen: RSA-Key-ID `mc-client-caf94007b07dc90b`. Dieses Repository enthält keine privaten Entwicklungsdateien oder Signierschlüssel.
 

@@ -1,3 +1,16 @@
+# Linux 2.2.7 · Fehlerbehebung
+
+Bei Linux 2.2.7 zeigt `fclient connect` die Auswahl zwischen Hosted-Kundenkonto
+und privatem Gateway. `fclient connection status` gibt den aktuellen
+Zielstatus aus. Ist ein Gerät bereits gekoppelt, wird sein Ziel nicht
+automatisch überschrieben. Erst `fclient disconnect` und danach den
+neuen Gerätecode bestätigen. Wenn das Hosted-Kontoprofil fehlt, muss
+der offizielle Installer die passenden HTTPS-Origins bereitstellen.
+Die unabhängige Update-Suche verwendet den öffentlichen statischen
+GitHub-Katalog, nicht die anonyme GitHub-Release-API.
+
+## Hinweise aus früheren Linux-Versionen
+
 # Linux Client 2.2.5 · Fehlerbehebung
 
 [← README](../README.md) · [Installation](INSTALLATION.md) · [Sicherheit & Prüfsummen](SICHERHEIT-UND-KOMPATIBILITAET.md)
