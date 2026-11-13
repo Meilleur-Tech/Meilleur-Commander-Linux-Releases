@@ -1,12 +1,12 @@
 {
-  "asset_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.5/Meilleur-Commander-Client-Linux-HEADLESS-arm64-2.2.5.zip",
+  "asset_url": "https://github.com/Meilleur-Tech/Meilleur-Commander-Linux-Releases/releases/download/linux-client-v2.2.7/Meilleur-Commander-Client-Linux-HEADLESS-arm64-2.2.7.zip",
   "channel": "linux-arm64-headless",
-  "client_version": "2.2.5",
-  "manifest_sha256": "1255be1a680bd6d653160f9b697e06dfd6b7c172f8e76c4f7073e3867c6e943e",
+  "client_version": "2.2.7",
+  "manifest_sha256": "bd60cae734120dd9424b965d3dbb2d34f9d4ff6a6c17e9d87ac3f6fe7d3216cc",
   "schema": "fabric-linux-independent-channel/v1",
   "signature": {
     "algorithm": "rsa-sha256",
     "key_id": "mc-client-caf94007b07dc90b",
-    "value": "Uk/dejo8SYmI3aaWqPtHGWewaj+KytZWSZiWCHo2eyV8KUDDSPLUM4cg5VD3iNxVFyeVV5nHwenX9hE8Z9Qv9U0L0x5AxWfTOxSNj3CcgxxvRnH2opnznFHUh/GYCtoGGJzcKWmjPybP+/byM1zeYYOoSmUidSQmWo97xsdQbhDYECHNbiFL8ul1LcyvecycaPERBiE91yHVWZ+nEULpNv+V5u/BTHumaMqwyLbewzO+DRwgapHeXEGIQNmzNKGEvRiOPfMtSGdwsuey1fiTTvI5NYTLjigcchsHG3nxDom321RGVe2rZJLaiRCr8+7NjzWQzHc1lLNYIZ2lcrMlirsdbqNUyifa8ZQWsHHLf4SS0yFHDEy3wOc8sZAZJlQaRl8uhEUIp1vduB8748eyj+9xT0m57lmSrDiErEvUW0C2sbEWghNW/tAIjumx3yMTtHphIVeZ7WIXhxiG7LAOkMvZI0xcCVEKe2iNDwT7sxTNSclVJw3JdtA5Bop2g+bR"
+    "value": "wYBCfG0srrxYW+uJENvmu4reg6/0YFip+xZprRxJbB8nGWOdWm60DHFT6QMYkR1WtlSgN/cgYL0W83so5Uw2sVJWS9CIjLscTJsS2GbhDLx3fC9nd0OYxagWTT0QO1WBiaRe58KEpj0TEQET8FBpF2qEKML5LJ97/zTkoXqVmaqv6BVNppMOmbgzr8Ki8e7b8at6hS5/WYgHjHh3SeOBkEp60r/i2cX/SPasEgTFLezYDS87N5BatBkqlpbQ+Pt9aBMoIlTUjLh0RBqILk4ZNlotEwDCpRvFmuZqlp6vO3HGb1NC45HWf9fIIPryvs1DunkmYxxct0i+tAl09Dg70X0BAuaThz/VHRCehzCP14fPBCy/gcUbK9g2spQ0I7i5aMZSAltjsAqp7eLfCnKHL5a3bTqhLDkW/wlvevXbP5BbWbOdBalMhhirMW3yWZNP7E9wGgxqTbHRKHI+cavkv1D0LrKaWWNkIdWgGxLE+Zjh0GD6lrFXUStd1rLTlrbo"
   }
 }
